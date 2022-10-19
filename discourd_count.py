@@ -18,11 +18,12 @@ for discord in discords:
         discord_count = int(re.findall(r'\d+(?:\,\d+)?', description['content'])[-1].replace(',', ''))
         tam += discord_count
 
-        print(discord + ': ' +discord_count)
+        print(discord + ': ' +str(discord_count))
 
     except Exception as e:
-        print('failed importing discord count: ' + str(e))
+        print('failed importing discord count for ' + discord + ': ' + str(e))
         pass
 
     time.sleep(1)
-    print('Total users= ' + str(tam))
+
+print('Total users = ' + str(tam))
