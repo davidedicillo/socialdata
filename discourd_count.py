@@ -3,8 +3,11 @@ import requests
 import re
 import time
 
+# Add here the discord links that need to be parsed
 discords = []
 
+
+# Total users
 tam = 0
 
 for discord in discords:
@@ -15,11 +18,11 @@ for discord in discords:
         discord_count = int(re.findall(r'\d+(?:\,\d+)?', description['content'])[-1].replace(',', ''))
         tam += discord_count
 
-        print(discord_count)
+        print(discord + ': ' +discord_count)
 
     except Exception as e:
         print('failed importing discord count: ' + str(e))
         pass
 
     time.sleep(1)
-    print('total = ' + str(tam))
+    print('Total users= ' + str(tam))
