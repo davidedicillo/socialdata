@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import re
+import time
 
 discords = [
     "https://discord.gg/tQp4pSE",
@@ -218,6 +219,8 @@ for discord in discords:
         print(discord_count)
 
     except Exception as e:
-        print('failed importing discord count: ' + e)
+        print('failed importing discord count: ' + str(e))
         pass
-    print(tam)
+
+    time.sleep(1)
+    print('total = ' + str(tam))
